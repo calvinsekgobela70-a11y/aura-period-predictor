@@ -46,6 +46,7 @@ export default function App() {
             cycleLength={data.settings.averageCycleLength}
             periodLength={data.settings.averagePeriodLength}
             onLogFlow={handleLogFlow}
+            userName={data.settings.userName}
           />
         );
       case 'calendar':

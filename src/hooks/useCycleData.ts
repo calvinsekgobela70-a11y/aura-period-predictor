@@ -10,6 +10,7 @@ const DEFAULT_DATA: CycleData = {
     averagePeriodLength: 5,
     waterGoal: 2000,
     sleepGoal: 8,
+    userName: 'Aura',
   },
 };
 

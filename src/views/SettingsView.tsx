@@ -30,6 +30,27 @@ export function SettingsView({ settings, updateSettings }: SettingsViewProps) {
       <div className="space-y-6">
         <section className="bg-white p-6 rounded-[32px] shadow-sm border border-pink-50">
           <h3 className="text-xs font-black text-gray-400 uppercase tracking-tighter mb-6 flex items-center gap-2">
+            <User size={16} /> Personalization
+          </h3>
+          
+          <div className="space-y-6">
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <label className="font-semibold text-gray-700">Display Name</label>
+              </div>
+              <input 
+                type="text" 
+                value={settings.userName || ''}
+                onChange={(e) => updateSettings({ userName: e.target.value })}
+                placeholder="Aura"
+                className="w-full px-4 py-2 border border-pink-100 rounded-2xl outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition-all text-gray-700 font-medium"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 rounded-[32px] shadow-sm border border-pink-50">
+          <h3 className="text-xs font-black text-gray-400 uppercase tracking-tighter mb-6 flex items-center gap-2">
             <User size={16} /> Cycle Defaults
           </h3>
           

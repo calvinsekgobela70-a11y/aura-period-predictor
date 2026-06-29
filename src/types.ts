@@ -22,6 +22,7 @@ export interface UserSettings {
   averagePeriodLength: number; // Default 5
   waterGoal: number; // Default 2000ml
   sleepGoal: number; // Default 8 hours
+  userName?: string; // Default 'Aura'
 }
 
 export interface CycleData {

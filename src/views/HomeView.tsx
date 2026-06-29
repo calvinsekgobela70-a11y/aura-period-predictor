@@ -9,9 +9,10 @@ interface HomeViewProps {
   cycleLength: number;
   periodLength: number;
   onLogFlow: () => void;
+  userName?: string;
 }
 
-export function HomeView({ latestPeriod, cycleLength, periodLength, onLogFlow }: HomeViewProps) {
+export function HomeView({ latestPeriod, cycleLength, periodLength, onLogFlow, userName }: HomeViewProps) {
   const currentDay = latestPeriod ? getCycleDay(latestPeriod.startDate) : 0;
   const isCurrentlyBleeding = latestPeriod && latestPeriod.endDate === null;
   
@@ -36,7 +37,7 @@ export function HomeView({ latestPeriod, cycleLength, periodLength, onLogFlow }:
       className="flex flex-col items-center pt-8 pb-32 px-6 min-h-screen"
     >
       <header className="w-full text-center mb-10">
-        <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">Aura</h1>
+        <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">{userName || 'Aura'}</h1>
         <p className="text-gray-400 font-medium">Your Cycle Tracker</p>
       </header>
 
