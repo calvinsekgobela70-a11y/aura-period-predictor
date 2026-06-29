@@ -69,13 +69,22 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF5F7] font-sans selection:bg-pink-200 selection:text-pink-900 text-[#4A4A4A] overflow-x-hidden">
-      <main className="max-w-md mx-auto relative bg-[#FFF5F7] min-h-screen shadow-2xl border-x border-pink-50 flex flex-col">
-        <AnimatePresence mode="wait">
-          {renderView()}
-        </AnimatePresence>
-        <Navigation currentView={currentView} onChange={setCurrentView} />
-      </main>
+    <div className="min-h-screen bg-[#0f172a] font-sans selection:bg-pink-200 selection:text-pink-900 text-[#4A4A4A] flex items-center justify-center p-4 sm:p-8">
+      <div className="relative w-full max-w-[400px] h-[800px] max-h-[90vh] bg-black rounded-[50px] sm:rounded-[60px] shadow-2xl overflow-hidden ring-[10px] sm:ring-[14px] ring-black border-[4px] sm:border-[8px] border-[#2a2a35]">
+        {/* Notch */}
+        <div className="absolute top-0 inset-x-0 h-6 sm:h-7 flex justify-center z-50">
+           <div className="w-24 sm:w-32 h-6 sm:h-7 bg-black rounded-b-2xl sm:rounded-b-3xl flex items-center justify-center gap-2">
+              <div className="w-12 h-1 bg-gray-800 rounded-full"></div>
+              <div className="w-2 h-2 bg-blue-900 rounded-full border border-gray-800"></div>
+           </div>
+        </div>
+        <main className="w-full h-full relative bg-[#FFF5F7] flex flex-col overflow-y-auto overflow-x-hidden hide-scrollbar">
+          <AnimatePresence mode="wait">
+            {renderView()}
+          </AnimatePresence>
+          <Navigation currentView={currentView} onChange={setCurrentView} />
+        </main>
+      </div>
     </div>
   );
 }
